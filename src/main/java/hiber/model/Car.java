@@ -15,6 +15,8 @@ public class Car {
     @Column(name = "series")
     int series;
 
+    public Car(){}
+
     public Car(String name, int series) {
         this.name = name;
         this.series = series;

@@ -19,7 +19,9 @@ public class User {
    @Column(name = "email")
    private String email;
 
-   @Column(name = "cars")
+   @OneToOne(mappedBy = "cars")
+   @MapsId
+   @JoinColumn(name = "id")
    private Car car;
 
    public User() {}
@@ -29,6 +31,13 @@ public class User {
       this.lastName = lastName;
       this.email = email;
       this.car = car;
+   }
+
+   public User(String firstName, String lastName, String email) {
+      this.firstName = firstName;
+      this.lastName = lastName;
+      this.email = email;
+    //  this.car = new Car("1", 1);
    }
 
    public Long getId() {
