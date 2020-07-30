@@ -15,6 +15,10 @@ public class Car {
     @Column(name = "series")
     int series;
 
+  //  @OneToOne
+   // @JoinColumn(name = "id")
+  //  User user;
+
     public Car(){}
 
     public Car(String name, int series) {
@@ -44,5 +48,14 @@ public class Car {
 
     public void setSeries(int series) {
         this.series = series;
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", series=" + series +
+                '}';
     }
 }
