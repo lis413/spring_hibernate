@@ -44,7 +44,8 @@ public class MainApp {
          System.out.println("Name car = " + user.getCar());
          System.out.println();
       }
-      User user2 = userService.getUserCarSeries("2");
+      User user2 = userService.getUserCarSeries(2);
+      System.out.println(user2);
 
       context.close();
    }
