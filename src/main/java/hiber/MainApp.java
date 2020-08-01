@@ -16,16 +16,13 @@ public class MainApp {
 
       UserService userService = context.getBean(UserService.class);
 
+      userService.dropTable("Car");
+      userService.dropTable("User");
+
       Car car1 = new Car("1", 1);
       Car car2 = new Car("2", 2);
       Car car3 = new Car("3", 3);
       Car car4 = new Car("4", 4);
-
-
-//      userService.add(new User("User1", "Lastname1", "user1@mail.ru"));
-//      userService.add(new User("User2", "Lastname2", "user2@mail.ru"));
-//      userService.add(new User("User3", "Lastname3", "user3@mail.ru"));
-//      userService.add(new User("User4", "Lastname4", "user4@mail.ru"));
 
       userService.add(new User("User1", "Lastname1", "user1@mail.ru", car1));
       userService.add(new User("User2", "Lastname2", "user2@mail.ru", car2));
@@ -34,18 +31,10 @@ public class MainApp {
 
       List<User> users = userService.listUsers();
       for (User user : users) {
-         System.out.println("Id = "+user.getId());
-         System.out.println("First Name = "+user.getFirstName());
-         System.out.println("Last Name = "+user.getLastName());
-         System.out.println("Email = "+user.getEmail());
-         Car car5 = user.getCar();
-         System.out.println(car5);
-         System.out.println(car5.getName());
-         System.out.println("Name car = " + user.getCar());
-         System.out.println();
+         System.out.println(user);
       }
       User user2 = userService.getUserCarSeries(2);
-      System.out.println(user2);
+      System.out.println("FIND -    " + user2);
       context.close();
    }
 }

@@ -10,14 +10,10 @@ public class Car {
     private Long id;
 
     @Column(name = "name")
-    String name;
+    private String name;
 
     @Column(name = "series")
-    int series;
-
-  //  @OneToOne
-   // @JoinColumn(name = "id")
-  //  User user;
+    private int series;
 
     public Car(){}
 
