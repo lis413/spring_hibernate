@@ -42,7 +42,6 @@ public class UserDaoImp implements UserDao {
    public void dropTable(String name) {
       String hql = "delete from " + name;
       Query query = sessionFactory.getCurrentSession().createQuery(hql);
-      //query.setParameter("name", name);
       query.executeUpdate();
    }
 
